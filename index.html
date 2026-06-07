@@ -139,27 +139,22 @@
             <div class="content has-text-justified">
               <!-- TODO: Replace with your paper abstract -->
               <p>
-                Robust motion tracking and recovery from disturbances and falls remain challenging problems in humanoid
-                motion control under highly dynamic motions and strong external perturbations.
-                Existing reinforcement learning-based motion tracking methods often terminate training episodes
-                immediately after severe tracking failures, limiting recovery-oriented exploration in unstable or fallen
-                states.
-                As a result, policies often struggle to recover tracking after strong disturbances or a complete loss of
-                balance.
-                To address these issues, we propose RoMTrack, a robust humanoid motion-tracking framework with
-                disturbance and fall-recovery capabilities.
-                The framework employs an asymmetric Actor-Critic architecture during training to utilize privileged
-                information from the simulation environment, while relying only on proprioceptive observations and
-                reference motion features during deployment.
-                Specifically, RoMTrack consists of three components.
-                First, a yaw-aligned tracking representation is introduced to reduce sensitivity to global drift and
-                heading disturbances while preserving gravity-related balance information.
-                Second, we introduce a Bernoulli-based probabilistic termination mechanism that preserves interaction in
-                unstable and fallen states, enabling the policy to explore both disturbance recovery and fall recovery
-                behaviors after severe tracking failures.
-                Finally, we propose a tracking-error-driven adaptive sampling strategy dynamically reshapes the sampling
-                distribution based on online tracking performance, increasing the training frequency for difficult
-                tracking segments and unstable recovery states.
+                Recent reinforcement learning approaches have shown great promise in improving humanoid motion tracking performance
+                and achieving fall recovery under disturbances. However, most existing works treat motion tracking and fall recovery 
+                as different tasks and require multi-stage training with specialized recovery rewards and/or separate recovery policies. 
+                Moreover, existing reinforcement learning-based methods often terminate training episodes immediately after severe tracking 
+                failures, limiting recovery-oriented exploration in unstable or fallen states.
+                To address the above issues, we propose Stubborn, a streamlined and unified reinforcement learning framework to achieve robust 
+                humanoid motion tracking and fall recovery.  
+                Specifically, Stubborn uses an asymmetric Actor-Critic architecture and consists of three major components. First, a yaw-aligned 
+                tracking representation is adopted to reduce sensitivity to global drift and heading disturbances while preserving gravity-related 
+                balance information. Second, we introduce a Bernoulli-based probabilistic termination mechanism that enables the policy to encourage 
+                exploration of fall-recovery behaviors under varying failure modes.
+                Third, we propose a probabilistic termination and tracking-error-driven strategy that dynamically reshapes the sampling distribution 
+                based on tracking performance, increasing the training efficiency for difficult motion segments and unstable states. Extensive comparisons 
+                with SOTA methods and ablation studies show that Stubborn achieved competitive performance, and the proposed probabilistic termination 
+                mechanism and adaptive sampling strategy contributed to the performance and robustness gains.
+                For real-world demonstrations, please refer to https://aislab-sustech.github.io/Stubborn/.
             </div>
           </div>
         </div>
@@ -174,8 +169,8 @@
             <h2 class="title is-3">Method</h2>
             <!-- 新增图片容器，图片在文字上方 -->
             <div class="method-image-container" style="margin-bottom: 24px;">
-              <img src="./static/images/framework.jpg" alt="Method Illustration"
-                style="max-width:100%;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.10);" />
+              <img src="./static/images/framework.png" alt="Method Illustration"
+                style="max-width:100%;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.10);display:block;" />
             </div>
             <div class="content has-text-justified">
               <p>
