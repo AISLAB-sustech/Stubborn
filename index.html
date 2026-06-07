@@ -174,10 +174,7 @@
             </div>
             <div class="content has-text-justified">
               <p>
-                Overview: Motion-capture data are first retargeted into reference motions. The policy is
-                then trained with a yaw-aligned representation, an asymmetric actor--critic architecture,
-                tracking-error-based adaptive sampling, and probabilistic termination. The learned policy is finally
-                deployed on the real robot for highly dynamic motion tracking and recovery from unstable states.
+                <strong>Overview of Stubborn.</strong> The policy is trained with a yaw-aligned representation and via an asymmetric actor&#8209;critic architecture, with a Bernoulli-based soft termination mechanism, and probabilistic termination and tracking error-driven sampling strategy.
               </p>
             </div>
           </div>
@@ -223,12 +220,12 @@
             <!-- 支持LaTeX公式的说明文字 -->
             <div class="content has-text-justified mb-12">
               <p>
-                For $\Delta \text{acc}$, RoMTrack achieves a score of $17.09$, which is lower than HoloMotion,
+                For $\Delta \text{acc}$, Stubborn achieves a score of $17.09$, which is lower than HoloMotion,
                 Any2Track, and From-scratch RL, and is close to BFM-Zero.
                 Although BFM-Zero achieves a slightly lower $\Delta \text{acc}$ value, its MPBPE, MPJPE, and MPJVE are
-                substantially higher than those of RoMTrack.
-                Considering these metrics together, RoMTrack achieves relatively low tracking errors on the complete
-                LAFAN1 dataset while maintaining stable and smooth dynamic motion performance.
+                substantially higher than those of Stubborn.
+                Considering these metrics together, Stubborn achieves lower tracking errors across the full
+                LAFAN1 dataset while maintaining stable, smoother dynamic motion performance.
               </p>
             </div>
 
